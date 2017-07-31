@@ -5,6 +5,9 @@
 
 body {
     height: 100vh;
+    background-image: url("bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #log {
@@ -19,7 +22,7 @@ form {
     display: flex;
 }
 
-#inp {
+#text {
     height: 100%;
     width: 96%;
     box-sizing: border-box;
@@ -32,7 +35,7 @@ form {
 }
 
 pre {
-    border: 1px solid greenyellow;
+    margin: 0;
     box-sizing: border-box;
     height: 6.25%;
     font-size: 1.3em;
