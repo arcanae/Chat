@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+#log {
+    height: 95%;
+    width: 100%;
+    overflow: hidden;
+}
+
+form {
+    height: 5%;
+    width: 100%;
+    display: flex;
+}
+
+#inp {
+    height: 100%;
+    width: 96%;
+    box-sizing: border-box;
+}
+
+#sub {
+    box-sizing: border-box;
+    width: 4%;
+    height: 100%;
+}
+
+pre {
+    border: 1px solid greenyellow;
+    box-sizing: border-box;
+    height: 6.25%;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+}
