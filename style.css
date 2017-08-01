@@ -34,11 +34,9 @@ form {
     height: 100%;
 }
 
-pre {
+p {
     margin: 0;
-    box-sizing: border-box;
-    height: 6.25%;
-    font-size: 1.3em;
-    display: flex;
-    align-items: center;
+    padding: 0.5% 0 0.5% 0;
+    font-size: 1em;
+    /* overflow-wrap: break-word; */
 }
