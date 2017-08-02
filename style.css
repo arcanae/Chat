@@ -5,18 +5,63 @@
 
 body {
     height: 100vh;
-    background-image: url("bg.png");
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+
+/* LOGIN */
+
+#logincont,
+#signupcont {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 1;
+}
+
+#logincont>form,
+#signupcont>form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 1%;
+    border: 1px solid white;
+    align-items: center;
+}
+
+#but1,
+#but2 {
+    color: black;
+}
+
+.textinput {
+    margin-bottom: 3%;
+}
+
+
+/* CHAT */
+
+#notlogged {
+    margin: 0;
+}
+
+#notlogged>input {
+    padding: 0;
 }
 
 #log {
     height: 95%;
     width: 100%;
     overflow: hidden;
+    background-image: url("bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-form {
+#logform {
     height: 5%;
     width: 100%;
     display: flex;
@@ -38,5 +83,5 @@ p {
     margin: 0;
     padding: 0.5% 0 0.5% 0;
     font-size: 1em;
-    /* overflow-wrap: break-word; */
+    overflow-wrap: break-word;
 }
