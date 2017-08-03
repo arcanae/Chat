@@ -1,7 +1,19 @@
 document.querySelector("#login").addEventListener("click", function(e) {
     e.preventDefault();
     document.querySelector("#logincont").style.display = "flex";
-    onForm(document.querySelector("#signin"));
+    let form = document.querySelector("#signin");
+    let overForm = false;
+    form.addEventListener("mouseover", function() {
+        overForm = true;
+    });
+
+    form.addEventListener("mousemove", function() {
+        overForm = true;
+    });
+
+    form.addEventListener("mouseout", function() {
+        overForm = false;
+    });
     document.querySelector("#logincont").addEventListener("click", function() {
         if (overForm === false) {
             document.querySelector("#logincont").style.display = "none";
@@ -12,7 +24,19 @@ document.querySelector("#login").addEventListener("click", function(e) {
 document.querySelector("#register").addEventListener("click", function(e) {
     e.preventDefault();
     document.querySelector("#signupcont").style.display = "flex";
-    onForm(document.querySelector("#signup"));
+    let form = document.querySelector("#signup");
+    let overForm = false;
+    form.addEventListener("mouseover", function() {
+        overForm = true;
+    });
+
+    form.addEventListener("mousemove", function() {
+        overForm = true;
+    });
+
+    form.addEventListener("mouseout", function() {
+        overForm = false;
+    });
     document.querySelector("#signupcont").addEventListener("click", function() {
         if (overForm === false) {
             document.querySelector("#signupcont").style.display = "none";
@@ -48,8 +72,8 @@ function addChatBar() {
     });
 }
 
-function onForm(form) {
-    let overform = false;
+function onForm(selec) {
+    let form = document.querySelector(selec);
     form.addEventListener("mouseover", function() {
         overForm = true;
     });
