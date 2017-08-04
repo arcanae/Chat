@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS `chat`;
-CREATE DATABASE `chat`;
+DROP DATABASE IF EXISTS `justin_chat`;
+CREATE DATABASE `justin_chat`;
 
 
-GRANT ALL ON `chat`.* TO 'ajax-chat-user'@'localhost' IDENTIFIED BY 'We LOVE SQL !';
+-- GRANT ALL ON `chat`.* TO 'ajax-chat-user'@'localhost' IDENTIFIED BY 'We LOVE SQL !';
 
-USE `chat`;
+USE `justin_chat`;
 
 CREATE TABLE `user` (
     `id`    INT AUTO_INCREMENT PRIMARY KEY,
-    `name`  VARCHAR(64) NOT NULL,
-    `password` VARCHAR (64) NOT NULL
+    `username`  VARCHAR(64) NOT NULL,
+    `pass` VARCHAR (64) NOT NULL
 );
 
 CREATE TABLE `message` (

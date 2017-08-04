@@ -22,7 +22,7 @@
         </section>
 
         <section id="signupcont">
-            <form id="signup" action="" method="POST">
+            <form id="signup" action="signup.php" method="POST">
                 <label for="user">Username:</label>
                 <input class="textinput" type="text" name="user" placeholder="Username" required>
                 <label for="pass">Password:</label>
