@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,7 @@
 
 <body>
         <section id="logincont">
-            <form id="signin" action="" method="POST">
+            <form id="signin" action="auth.php" method="POST">
                     <label for="user">Username:</label>
                     <input class='textinput' type="text" name="user" placeholder="Username">
                     <label for="pass">Password:</label>
@@ -39,7 +40,7 @@
                 <input class="btn btn-primary col-md-2 offset-md-2" id="register" type="submit" value="Register">
         </form>
     <?php } else { ?>
-        <form id="logform" method="POST" action="">
+        <form id="logform" method="POST" action="log.php">
             <input id="text" type="text" autocomplete="off">
             <input id="sub" type="submit" value="⤶">
         </form>

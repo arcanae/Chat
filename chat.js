@@ -1,48 +1,56 @@
-document.querySelector("#login").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector("#logincont").style.display = "flex";
-    let form = document.querySelector("#signin");
-    let overForm = false;
-    form.addEventListener("mouseover", function() {
-        overForm = true;
-    });
+if (document.querySelector("#login")) {
+    document.querySelector("#login").addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector("#logincont").style.display = "flex";
+        let form = document.querySelector("#signin");
+        let overForm = false;
+        form.addEventListener("mouseover", function() {
+            overForm = true;
+        });
 
-    form.addEventListener("mousemove", function() {
-        overForm = true;
-    });
+        form.addEventListener("mousemove", function() {
+            overForm = true;
+        });
 
-    form.addEventListener("mouseout", function() {
-        overForm = false;
+        form.addEventListener("mouseout", function() {
+            overForm = false;
+        });
+        document.querySelector("#logincont").addEventListener("click", function() {
+            if (overForm === false) {
+                document.querySelector("#logincont").style.display = "none";
+            }
+        });
     });
-    document.querySelector("#logincont").addEventListener("click", function() {
-        if (overForm === false) {
-            document.querySelector("#logincont").style.display = "none";
-        }
-    });
-});
+}
 
-document.querySelector("#register").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector("#signupcont").style.display = "flex";
-    let form = document.querySelector("#signup");
-    let overForm = false;
-    form.addEventListener("mouseover", function() {
-        overForm = true;
-    });
+if (document.querySelector("#register")) {
+    document.querySelector("#register").addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector("#signupcont").style.display = "flex";
+        let form = document.querySelector("#signup");
+        let overForm = false;
+        form.addEventListener("mouseover", function() {
+            overForm = true;
+        });
 
-    form.addEventListener("mousemove", function() {
-        overForm = true;
-    });
+        form.addEventListener("mousemove", function() {
+            overForm = true;
+        });
 
-    form.addEventListener("mouseout", function() {
-        overForm = false;
+        form.addEventListener("mouseout", function() {
+            overForm = false;
+        });
+        document.querySelector("#signupcont").addEventListener("click", function() {
+            if (overForm === false) {
+                document.querySelector("#signupcont").style.display = "none";
+            }
+        });
     });
-    document.querySelector("#signupcont").addEventListener("click", function() {
-        if (overForm === false) {
-            document.querySelector("#signupcont").style.display = "none";
-        }
-    });
-});
+}
+
+if (document.querySelector("#sub")) {
+    addChatBar();
+}
 
 let x = 1;
 

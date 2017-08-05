@@ -15,7 +15,7 @@ CREATE TABLE `user` (
 CREATE TABLE `message` (
     `id`    INT AUTO_INCREMENT PRIMARY KEY,
     `text` VARCHAR(512) NOT NULL,
-    `date` DATETIME NOT NULL,
+    `date` VARCHAR(32) NOT NULL,
     `user_id` INT NOT NULL,
     FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
  );
