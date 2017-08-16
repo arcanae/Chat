@@ -1,3 +1,10 @@
+displayChat();
+
+
+setInterval(function() {
+    displayChat();
+}, 1000);
+
 if (document.querySelector("#login")) {
     document.querySelector("#login").addEventListener("click", function(e) {
         e.preventDefault();
@@ -52,7 +59,6 @@ if (document.querySelector("#sub")) {
     addChatBar();
 }
 
-let x = 1;
 
 // FUNCTIONS 
 
@@ -62,21 +68,31 @@ function addChatBar() {
         ajax = new XMLHttpRequest();
         ajax.open("POST", "log.php", true);
         ajax.send(document.querySelector("#text").value);
+        console.log(document.querySelector("#text").value);
         ajax.addEventListener("readystatechange", function() {
             if (this.readyState === 4 && this.status === 200) {
-                document.querySelector("#text").value = "";
-                console.log(ajax.response);
-                document.querySelector("#log").innerHTML += '<p id="p' + x + '">' + ajax.response + '</p>'
-                document.querySelector("#log").scrollTop = document.querySelector("#log").scrollHeight;
-                if (x % 2 === 1) {
-                    document.querySelector("#p" + x).style.backgroundColor = "rgba(0,0,0,0.7)";
-                    document.querySelector("#p" + x).style.color = "white";
-                } else {
-                    document.querySelector("#p" + x).style.backgroundColor = "rgba(177,177,177,0.7)";
-                }
-                x++
-            }
+                displayChat();
+            };
         });
+        if (document.querySelector("#text")) {
+            document.querySelector("#text").value = "";
+        }
+    });
+}
+
+function displayChat() {
+    document.querySelector("#log").innerHTML = "";
+    xhr = new XMLHttpRequest();
+    xhr.open("GET", "displayChat.php", true);
+    xhr.send();
+    xhr.addEventListener("readystatechange", function() {
+        if (this.readyState === 4 && this.status === 200) {
+            let data = JSON.parse(xhr.response);
+            for (let val of data) {
+                document.querySelector("#log").innerHTML += '<p>[' + val.date + '] ' + val.username + ': ' + val.text + '</p>'
+                document.querySelector("#log").scrollTop = document.querySelector("#log").scrollHeight;
+            }
+        }
     });
 }
 
